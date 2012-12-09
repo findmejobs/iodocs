@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "connect-redis": "1.0.6",
-    "express": "2.5.8",
+    "express": "2.5.x",
     "jade": "0.13",
     "oauth": "0.9.3",
     "redis": ">= 0.7.0",
@@ -31,7 +31,7 @@
   "devDependencies": {},
   "main": "index",
   "engines": {
-    "node": ">= 0.4.0",
+    "node": "0.8.x",
     "npm": "1.1.x"
   }
 }
