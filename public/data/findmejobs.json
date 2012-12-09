@@ -5,7 +5,7 @@
       "methods":[
         {
           "MethodName":"Search for Listings",
-          "Synopsis":"Do something",
+          "Synopsis":"API methods for dealing with Listings",
           "HTTPMethod":"GET",
           "URI":"/listings.:format",
           "RequiresOAuth":"Y",
