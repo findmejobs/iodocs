@@ -1,0 +1,121 @@
+{
+  "endpoints": [
+    {
+      "name": "Listing Methods",
+      "methods":[
+        {
+          "MethodName":"Search for Listings",
+          "Synopsis":"Do something",
+          "HTTPMethod":"GET",
+          "URI":"/listings.:format",
+          "RequiresOAuth":"Y",
+          "parameters":[
+            {
+              "Name":"keywords",
+              "Required":"N",
+              "Default":"",
+              "Type":"string",
+              "Description":"One or more (comma-separated) keywords to search for"
+            },
+            {
+              "Name":"position",
+              "Required":"N",
+              "Default":"",
+              "Type":"string",
+              "Description":"One or more (comma-seperated) position names to search for"
+            },
+            {
+              "Name":"position_id",
+              "Required":"N",
+              "Default":"",
+              "Type":"integer",
+              "Description":"One position to search for via id"
+            },
+            {
+              "Name":"sector",
+              "Required":"N",
+              "Default":"",
+              "Type":"string",
+              "Description":"One or more (comma-seperated) sector names to search for"
+            },
+            {
+              "Name":"sector_id",
+              "Required":"N",
+              "Default":"",
+              "Type":"integer",
+              "Description":"One sector to search for via id"
+            },
+            {
+              "Name":"active",
+              "Required":"N",
+              "Default":"",
+              "Type":"boolean",
+              "Description":"Filter listings based on the active flag"
+            },
+            {
+              "Name":"agency_id",
+              "Required":"N",
+              "Default":"",
+              "Type":"integer",
+              "Description":"Only show listings for the given agency"
+            },
+            {
+              "Name":"payment_frequency",
+              "Required":"N",
+              "Default":"",
+              "Type":"enumerated",
+              "Description":"Only show listings with the given payment frequency",
+              "EnumeratedList":[
+                "yearly",
+                "daily",
+                "hourly"
+              ]
+            },
+            {
+              "Name":"min_salary",
+              "Required":"N",
+              "Default":"",
+              "Type":"float",
+              "Description":"Show listings greater than the given minimum salary"
+            },
+            {
+              "Name":"max_salary",
+              "Required":"N",
+              "Default":"",
+              "Type":"float",
+              "Description":"Show listings less than the given maximum salary"
+            },
+            {
+              "Name":"lat_long",
+              "Required":"N",
+              "Default":"",
+              "Type":"string",
+              "Description":"The comma seperated lat and long to search for listings near. This will not work with the location parameter."
+            },
+            {
+              "Name":"location",
+              "Required":"N",
+              "Default":"",
+              "Type":"float",
+              "Description":"The location name to search for listings near. This will not work with the lat_long parameter."
+            },
+            {
+              "Name":"distance",
+              "Required":"N",
+              "Default":"20",
+              "Type":"float",
+              "Description":"The distance from the given lat/long or location"
+            },
+            {
+              "Name":"save_search",
+              "Required":"N",
+              "Default":"",
+              "Type":"string",
+              "Description":"If the user is signed in, save this serach with the given name"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
