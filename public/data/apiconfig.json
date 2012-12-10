@@ -3,7 +3,7 @@
     "name": "Find Me Jobs API",
     "protocol": "http",
     "baseURL": "tranquil-dawn-2924.herokuapp.com",
-    "publicPath": "/",
+    "publicPath": "",
     "booleanTrueVal": "true",
     "booleanFalseVal": "false"
   },
