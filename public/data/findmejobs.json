@@ -4,8 +4,8 @@
       "name": "Listing Methods",
       "methods":[
         {
-          "MethodName":"Search for Listings",
-          "Synopsis":"API methods for dealing with Listings",
+          "MethodName":"listings/index",
+          "Synopsis":"Seach listings",
           "HTTPMethod":"GET",
           "URI":"/listings.json",
           "RequiresOAuth":"Y",
@@ -114,6 +114,7 @@
               "Description":"If the user is signed in, save this serach with the given name"
             }
           ],
+          "ResponseCode":"200 (OK)",
           "ExpectResponses": [
             {
               "Format": "json",
@@ -145,11 +146,11 @@
           ]
         },
         {
-          "MethodName":"Get Listing Details",
+          "MethodName":"listings/show",
           "Synopsis":"Get the details of a specific Listing",
           "HTTPMethod":"GET",
           "URI":"/listings/279.json",
-          "RequiresOAuth":"Y",
+          "RequiresOAuth":"N",
           "parameters":[],
           "ExpectResponses": [
             {
@@ -175,7 +176,83 @@
                 "updated_at":"2012-11-19T15:55:48Z"
               }
             }
-          ]
+          ],
+          "ResponseCode":"200 (OK)"
+        },
+        {
+          "MethodName":"listings/create",
+          "Synopsis":"Creates a new listing",
+          "HTTPMethod":"POST",
+          "URI":"/listings.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ExpectRequests": [
+            {
+              "Format": "json",
+              "Schema": {
+                "active":true,
+                "agency_id":4,
+                "bearing":"4.785452896155",
+                "closing_date":null,
+                "country":"GB",
+                "created_at":"2012-11-19T15:55:48Z",
+                "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.", 
+                "distance":"3.78876892023058",
+                "location_lat":51.4309209,
+                "location_long":-0.0936496,
+                "location_name":"Lambeth",
+                "max_salary":null,
+                "min_salary":null,
+                "payment_frequency":null,
+                "position_id":389,
+                "title":"Recruiter",
+                "updated_at":"2012-11-19T15:55:48Z"
+              }
+            }
+          ],
+          "ResponseCode":"201 (Created)"
+        },
+        {
+          "MethodName":"listings/update",
+          "Synopsis": "Updates an existing listing",
+          "HTTPMethod":"PUT",
+          "URI":"/listings/1.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ExpectRequests": [
+            {
+              "Format": "json",
+              "Schema": {
+                "active":true,
+                "agency_id":4,
+                "bearing":"4.785452896155",
+                "closing_date":null,
+                "country":"GB",
+                "created_at":"2012-11-19T15:55:48Z",
+                "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.", 
+                "distance":"3.78876892023058",
+                "location_lat":51.4309209,
+                "location_long":-0.0936496,
+                "location_name":"Lambeth",
+                "max_salary":null,
+                "min_salary":null,
+                "payment_frequency":null,
+                "position_id":389,
+                "title":"Recruiter",
+                "updated_at":"2012-11-19T15:55:48Z"
+              }
+            }
+          ],
+          "ResponseCode":"204 (No Content)"
+        },
+        {
+          "MethodName":"listings/delete",
+          "Synopsis": "Deletes an existing listing",
+          "HTTPMethod":"DELETE",
+          "URI":"/listings/1.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ResponseCode":"204 (No Content)"
         }
       ]
     }
