@@ -74,6 +74,8 @@ ul
                             input(type='hidden', name='oauth', value=secure)
                             input(type='hidden', name='methodUri', value=method.URI)
 
+                            - if (method.ResponseCode)
+                              span.description(style='float: right; font-size: 90%') Successful Response Code: #{method.ResponseCode}
                             span.description #{method.Synopsis}
                             br
                             br
