@@ -333,7 +333,6 @@
                   "deleted_at":null,
                   "id":10,
                   "name":"Industrial",
-                  "parent_id":null,
                   "updated_at":"2012-10-07T12:14:43Z"
                 },
                 {
@@ -341,7 +340,6 @@
                   "deleted_at":"2012-10-07T12:30:24Z",
                   "id":13,
                   "name":"Food Production",
-                  "parent_id":10,
                   "updated_at":"2012-10-07T12:30:24Z"
                 }
               ]
@@ -359,9 +357,7 @@
             {
               "Format": "json",
               "Schema": {
-                "id":13,
-                "name":"Food Production",
-                "parent_id":10
+                "name":"Food Production"
               }
             }
           ],
@@ -378,8 +374,7 @@
             {
               "Format": "json",
               "Schema": {
-                "name":"Food Production",
-                "parent_id":10
+                "name":"Food Production"
               }
             }
           ],
@@ -390,6 +385,96 @@
           "Synopsis": "Deletes an existing sector",
           "HTTPMethod":"DELETE",
           "URI":"/sectors/1.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ResponseCode":"204 (No Content)"
+        }
+      ]
+    },
+    {
+      "name": "Position Methods",
+      "methods":[
+        {
+          "MethodName":"positions/index",
+          "Synopsis": "Gets a list of positions",
+          "HTTPMethod":"GET",
+          "URI":"/positions.json",
+          "RequiresOAuth":"Y",
+          "parameters":[
+            {
+              "Name":"since",
+              "Required":"N",
+              "Default":"",
+              "Type":"string",
+              "Description":"A valid timestamp. Only send the positions that have been added or changed since that time."
+            }
+          ],
+          "ResponseCode":"200 (Ok)",
+          "ExpectResponses": [
+            {
+              "Format": "json",
+              "Schema": [
+                {
+                  "created_at":"2012-10-07T12:14:43Z",
+                  "deleted_at":null,
+                  "id":10,
+                  "name":"Industrial",
+                  "sector_id":null,
+                  "updated_at":"2012-10-07T12:14:43Z"
+                },
+                {
+                  "created_at":"2012-10-07T12:15:34Z",
+                  "deleted_at":"2012-10-07T12:30:24Z",
+                  "id":13,
+                  "name":"Food Production",
+                  "sector_id":10,
+                  "updated_at":"2012-10-07T12:30:24Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "MethodName":"positions/create",
+          "Synopsis":"Creates a new position",
+          "HTTPMethod":"POST",
+          "URI":"/positions.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ExpectRequests": [
+            {
+              "Format": "json",
+              "Schema": {
+                "name":"Food Production",
+                "sector_id":10
+              }
+            }
+          ],
+          "ResponseCode":"201 (Created)"
+        },
+        {
+          "MethodName":"positions/update",
+          "Synopsis": "Updates an existing position",
+          "HTTPMethod":"PUT",
+          "URI":"/positions/1.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ExpectRequests": [
+            {
+              "Format": "json",
+              "Schema": {
+                "name":"Food Production",
+                "parent_id":10
+              }
+            }
+          ],
+          "ResponseCode":"204 (No Content)"
+        },
+        {
+          "MethodName":"positions/delete",
+          "Synopsis": "Deletes an existing position",
+          "HTTPMethod":"DELETE",
+          "URI":"/positions/1.json",
           "RequiresOAuth":"Y",
           "parameters":[],
           "ResponseCode":"204 (No Content)"
