@@ -255,6 +255,59 @@
           "ResponseCode":"204 (No Content)"
         }
       ]
+    },
+    {
+      "name": "User Registration Methods",
+      "methods":[
+        {
+          "MethodName":"registrations/create",
+          "Synopsis": "Registers a new user. This method requires the use of the *redacted* Oauth2 mechanism. After the registration is successful, then Oauth can be adjusted to use the new user with the normal mechanism.",
+          "HTTPMethod":"POST",
+          "URI":"/users.json",
+          "RequiresOAuth":"Y",
+          "parameters":[
+            {
+              "Name":"email",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The email address for the new user"
+            },
+            {
+              "Name":"name",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The name of the new user"
+            },
+            {
+              "Name":"password",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The password for the new user"
+            }
+          ],
+          "ResponseCode":"201 (Created)"
+        },
+        {
+          "MethodName":"registrations/pushtoken",
+          "Synopsis": "Used to assign the current device's push token to the currently logged in user. If the push token already exists for the user, it is silently discarded.",
+          "HTTPMethod":"POST",
+          "URI":"/users/pushtoken.json",
+          "RequiresOAuth":"Y",
+          "parameters":[
+            {
+              "Name":"code",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The push token to save"
+            }
+          ],
+          "ResponseCode":"201 (Created)"
+        }
+      ]
     }
   ]
 }
