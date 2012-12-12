@@ -140,7 +140,9 @@
                     "title":"Recruiter",
                     "updated_at":"2012-11-19T15:55:48Z"
                   }
-                ]
+                ],
+                "page":1,
+                "total_pages":2
               }
             }
           ]
@@ -192,10 +194,8 @@
               "Schema": {
                 "active":true,
                 "agency_id":4,
-                "bearing":"4.785452896155",
                 "closing_date":null,
                 "country":"GB",
-                "created_at":"2012-11-19T15:55:48Z",
                 "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.", 
                 "distance":"3.78876892023058",
                 "location_lat":51.4309209,
@@ -205,8 +205,7 @@
                 "min_salary":null,
                 "payment_frequency":null,
                 "position_id":389,
-                "title":"Recruiter",
-                "updated_at":"2012-11-19T15:55:48Z"
+                "title":"Recruiter"
               }
             }
           ],
@@ -225,10 +224,8 @@
               "Schema": {
                 "active":true,
                 "agency_id":4,
-                "bearing":"4.785452896155",
                 "closing_date":null,
                 "country":"GB",
-                "created_at":"2012-11-19T15:55:48Z",
                 "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.", 
                 "distance":"3.78876892023058",
                 "location_lat":51.4309209,
@@ -238,8 +235,7 @@
                 "min_salary":null,
                 "payment_frequency":null,
                 "position_id":389,
-                "title":"Recruiter",
-                "updated_at":"2012-11-19T15:55:48Z"
+                "title":"Recruiter"
               }
             }
           ],
@@ -306,6 +302,97 @@
             }
           ],
           "ResponseCode":"201 (Created)"
+        }
+      ]
+    },
+    {
+      "name": "Sector Methods",
+      "methods":[
+        {
+          "MethodName":"sectors/index",
+          "Synopsis": "Gets a list of sectors",
+          "HTTPMethod":"GET",
+          "URI":"/sectors.json",
+          "RequiresOAuth":"Y",
+          "parameters":[
+            {
+              "Name":"since",
+              "Required":"N",
+              "Default":"",
+              "Type":"string",
+              "Description":"A valid timestamp. Only send the sectors that have been added or changed since that time."
+            }
+          ],
+          "ResponseCode":"200 (Ok)",
+          "ExpectResponses": [
+            {
+              "Format": "json",
+              "Schema": [
+                {
+                  "created_at":"2012-10-07T12:14:43Z",
+                  "deleted_at":null,
+                  "id":10,
+                  "name":"Industrial",
+                  "parent_id":null,
+                  "updated_at":"2012-10-07T12:14:43Z"
+                },
+                {
+                  "created_at":"2012-10-07T12:15:34Z",
+                  "deleted_at":"2012-10-07T12:30:24Z",
+                  "id":13,
+                  "name":"Food Production",
+                  "parent_id":10,
+                  "updated_at":"2012-10-07T12:30:24Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "MethodName":"sectors/create",
+          "Synopsis":"Creates a new sector",
+          "HTTPMethod":"POST",
+          "URI":"/sectors.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ExpectRequests": [
+            {
+              "Format": "json",
+              "Schema": {
+                "id":13,
+                "name":"Food Production",
+                "parent_id":10
+              }
+            }
+          ],
+          "ResponseCode":"201 (Created)"
+        },
+        {
+          "MethodName":"sectors/update",
+          "Synopsis": "Updates an existing sector",
+          "HTTPMethod":"PUT",
+          "URI":"/sectors/1.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ExpectRequests": [
+            {
+              "Format": "json",
+              "Schema": {
+                "name":"Food Production",
+                "parent_id":10
+              }
+            }
+          ],
+          "ResponseCode":"204 (No Content)"
+        },
+        {
+          "MethodName":"sectors/delete",
+          "Synopsis": "Deletes an existing sector",
+          "HTTPMethod":"DELETE",
+          "URI":"/sectors/1.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ResponseCode":"204 (No Content)"
         }
       ]
     }
