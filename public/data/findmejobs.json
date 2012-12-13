@@ -352,13 +352,13 @@
           "HTTPMethod":"POST",
           "URI":"/sectors.json",
           "RequiresOAuth":"Y",
-          "parameters":[],
-          "ExpectRequests": [
+          "parameters":[
             {
-              "Format": "json",
-              "Schema": {
-                "name":"Food Production"
-              }
+              "Name":"name",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The name of the sector to create"
             }
           ],
           "ResponseCode":"201 (Created)"
@@ -369,13 +369,13 @@
           "HTTPMethod":"PUT",
           "URI":"/sectors/1.json",
           "RequiresOAuth":"Y",
-          "parameters":[],
-          "ExpectRequests": [
+          "parameters":[
             {
-              "Format": "json",
-              "Schema": {
-                "name":"Food Production"
-              }
+              "Name":"name",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The name of the sector"
             }
           ],
           "ResponseCode":"204 (No Content)"
@@ -440,14 +440,20 @@
           "HTTPMethod":"POST",
           "URI":"/positions.json",
           "RequiresOAuth":"Y",
-          "parameters":[],
-          "ExpectRequests": [
+          "parameters":[
             {
-              "Format": "json",
-              "Schema": {
-                "name":"Food Production",
-                "sector_id":10
-              }
+              "Name":"name",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The name of the position to create"
+            },
+            {
+              "Name":"sector_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the sector this position belongs in"
             }
           ],
           "ResponseCode":"201 (Created)"
@@ -458,14 +464,20 @@
           "HTTPMethod":"PUT",
           "URI":"/positions/1.json",
           "RequiresOAuth":"Y",
-          "parameters":[],
-          "ExpectRequests": [
+          "parameters":[
             {
-              "Format": "json",
-              "Schema": {
-                "name":"Food Production",
-                "parent_id":10
-              }
+              "Name":"name",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The name of the position"
+            },
+            {
+              "Name":"sector_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the sector this position belongs in"
             }
           ],
           "ResponseCode":"204 (No Content)"
