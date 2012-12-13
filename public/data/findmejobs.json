@@ -480,6 +480,113 @@
           "ResponseCode":"204 (No Content)"
         }
       ]
+    },
+    {
+      "name": "Saved Search Methods",
+      "methods":[
+        {
+          "MethodName":"saved_searches/index",
+          "Synopsis": "Gets a list of saved searches",
+          "HTTPMethod":"GET",
+          "URI":"/saved_searches.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ResponseCode":"200 (Ok)",
+          "ExpectResponses":[
+            {
+              "Format": "json",
+              "Schema": [
+                {
+                  "created_at":"2012-10-07T12:14:43Z",
+                  "id":1,
+                  "name":"IT jobs within 75 miles of Stafford (£18k-£45k p/a)",
+                  "updated_at":"2012-10-07T12:14:43Z",
+                  "user_id":1,
+                  "body":{
+                    "min_salary":"18000",
+                    "keywords":"Php",
+                    "save_search":"IT jobs (\u00a318k-\u00a345k p/a)",
+                    "position_id":"439,440",
+                    "max_salary":"45000",
+                    "payment_frequency":"Yearly"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "MethodName":"saved_searches/create",
+          "Synopsis":"Creates a new saved search",
+          "HTTPMethod":"POST",
+          "URI":"/saved_searches.json",
+          "RequiresOAuth":"Y",
+          "parameters":[
+            {
+              "Name":"user_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the user saving the search"
+            },
+            {
+              "Name":"name",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The name of the saved search"
+            },
+            {
+              "Name":"body",
+              "Required":"Y",
+              "Default":"",
+              "Type":"text",
+              "Description":"The json representation of the search. It uses the same parameters as listings/index, but already JSONified."
+            }
+          ],
+          "ResponseCode":"201 (Created)"
+        },
+        {
+          "MethodName":"saved_searches/update",
+          "Synopsis": "Updates an existing saved search",
+          "HTTPMethod":"PUT",
+          "URI":"/saved_searches/1.json",
+          "RequiresOAuth":"Y",
+          "parameters":[
+            {
+              "Name":"user_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the user saving the search"
+            },
+            {
+              "Name":"name",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The name of the saved search"
+            },
+            {
+              "Name":"body",
+              "Required":"Y",
+              "Default":"",
+              "Type":"text",
+              "Description":"The json representation of the search. It uses the same parameters as listings/index, but already JSONified."
+            }
+          ],
+          "ResponseCode":"204 (No Content)"
+        },
+        {
+          "MethodName":"saved_searches/delete",
+          "Synopsis": "Deletes an existing saved search",
+          "HTTPMethod":"DELETE",
+          "URI":"/saved_searches/1.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ResponseCode":"204 (No Content)"
+        }
+      ]
     }
   ]
 }
