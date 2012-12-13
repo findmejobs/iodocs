@@ -187,26 +187,102 @@
           "HTTPMethod":"POST",
           "URI":"/listings.json",
           "RequiresOAuth":"Y",
-          "parameters":[],
-          "ExpectRequests": [
+          "parameters":[
             {
-              "Format": "json",
-              "Schema": {
-                "active":true,
-                "agency_id":4,
-                "closing_date":null,
-                "country":"GB",
-                "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.", 
-                "distance":"3.78876892023058",
-                "location_lat":51.4309209,
-                "location_long":-0.0936496,
-                "location_name":"Lambeth",
-                "max_salary":null,
-                "min_salary":null,
-                "payment_frequency":null,
-                "position_id":389,
-                "title":"Recruiter"
-              }
+              "Name":"title",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The title of the listing"
+            },
+            {
+              "Name":"description",
+              "Required":"Y",
+              "Default":"",
+              "Type":"text",
+              "Description":"The description of the listing"
+            },
+            {
+              "Name":"position_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the position"
+            },
+            {
+              "Name":"active",
+              "Required":"Y",
+              "Default":"",
+              "Type":"boolean",
+              "Description":"Filter listings based on the active flag"
+            },
+            {
+              "Name":"agency_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the agency"
+            },
+            {
+              "Name":"payment_frequency",
+              "Required":"Y",
+              "Default":"",
+              "Type":"enumerated",
+              "Description":"The payment frequency of the listing's salary numbers",
+              "EnumeratedList":[
+                "yearly",
+                "daily",
+                "hourly"
+              ]
+            },
+            {
+              "Name":"min_salary",
+              "Required":"N",
+              "Default":"",
+              "Type":"float",
+              "Description":"The minimum value of the listing's salary range"
+            },
+            {
+              "Name":"max_salary",
+              "Required":"N",
+              "Default":"",
+              "Type":"float",
+              "Description":"The minimum value of the listing's salary range"
+            },
+            {
+              "Name":"location_lat",
+              "Required":"N",
+              "Default":"",
+              "Type":"float",
+              "Description":"The latitude of the listing's location. This will be automatically generated based on the location_name and country."
+            },
+            {
+              "Name":"location_long",
+              "Required":"N",
+              "Default":"",
+              "Type":"float",
+              "Description":"The longitude of the listing's location. This will be automatically generated based on the location_name and country."
+            },
+            {
+              "Name":"location_name",
+              "Required":"N",
+              "Default":"",
+              "Type":"string",
+              "Description":"The city or town name of the location."
+            },
+            {
+              "Name":"country",
+              "Required":"N",
+              "Default":"",
+              "Type":"string",
+              "Description":"The ISO-3166 2 digit code of the location's country."
+            },
+            {
+              "Name":"closing_date",
+              "Required":"N",
+              "Default":"",
+              "Type":"datetime",
+              "Description":"The closing date of the listing."
             }
           ],
           "ResponseCode":"201 (Created)"
@@ -217,26 +293,102 @@
           "HTTPMethod":"PUT",
           "URI":"/listings/1.json",
           "RequiresOAuth":"Y",
-          "parameters":[],
-          "ExpectRequests": [
+          "parameters":[
             {
-              "Format": "json",
-              "Schema": {
-                "active":true,
-                "agency_id":4,
-                "closing_date":null,
-                "country":"GB",
-                "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.", 
-                "distance":"3.78876892023058",
-                "location_lat":51.4309209,
-                "location_long":-0.0936496,
-                "location_name":"Lambeth",
-                "max_salary":null,
-                "min_salary":null,
-                "payment_frequency":null,
-                "position_id":389,
-                "title":"Recruiter"
-              }
+              "Name":"title",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The title of the listing"
+            },
+            {
+              "Name":"description",
+              "Required":"Y",
+              "Default":"",
+              "Type":"text",
+              "Description":"The description of the listing"
+            },
+            {
+              "Name":"position_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the position"
+            },
+            {
+              "Name":"active",
+              "Required":"Y",
+              "Default":"",
+              "Type":"boolean",
+              "Description":"Filter listings based on the active flag"
+            },
+            {
+              "Name":"agency_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the agency"
+            },
+            {
+              "Name":"payment_frequency",
+              "Required":"Y",
+              "Default":"",
+              "Type":"enumerated",
+              "Description":"The payment frequency of the listing's salary numbers",
+              "EnumeratedList":[
+                "yearly",
+                "daily",
+                "hourly"
+              ]
+            },
+            {
+              "Name":"min_salary",
+              "Required":"N",
+              "Default":"",
+              "Type":"float",
+              "Description":"The minimum value of the listing's salary range"
+            },
+            {
+              "Name":"max_salary",
+              "Required":"N",
+              "Default":"",
+              "Type":"float",
+              "Description":"The minimum value of the listing's salary range"
+            },
+            {
+              "Name":"location_lat",
+              "Required":"N",
+              "Default":"",
+              "Type":"float",
+              "Description":"The latitude of the listing's location. This will be automatically generated based on the location_name and country."
+            },
+            {
+              "Name":"location_long",
+              "Required":"N",
+              "Default":"",
+              "Type":"float",
+              "Description":"The longitude of the listing's location. This will be automatically generated based on the location_name and country."
+            },
+            {
+              "Name":"location_name",
+              "Required":"N",
+              "Default":"",
+              "Type":"string",
+              "Description":"The city or town name of the location."
+            },
+            {
+              "Name":"country",
+              "Required":"N",
+              "Default":"",
+              "Type":"string",
+              "Description":"The ISO-3166 2 digit code of the location's country."
+            },
+            {
+              "Name":"closing_date",
+              "Required":"N",
+              "Default":"",
+              "Type":"datetime",
+              "Description":"The closing date of the listing."
             }
           ],
           "ResponseCode":"204 (No Content)"
