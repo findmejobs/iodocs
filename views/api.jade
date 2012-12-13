@@ -199,4 +199,4 @@ ul
                                                             td.schema
                                                                 pre(class='prettyprint')!=JSON.stringify(response.Schema, null, 2)
                             - if (!method['read-only'])
-                                input(type='submit', id=method.MethodName, value='Try it!')
+                                input(type='submit', id=method.MethodName, value='Try it!', style='display:none;')
