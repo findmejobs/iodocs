@@ -454,7 +454,7 @@
             }
           ],
           "ResponseCode":"201 (Created)"
-        }
+        },
         {
           "MethodName":"registrations/pushtoken",
           "Synopsis": "Used to assign the current device's push token to the currently logged in user. If the push token already exists for the user, it is silently discarded.",
