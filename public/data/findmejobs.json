@@ -439,6 +439,23 @@
           "ResponseCode":"201 (Created)"
         },
         {
+          "MethodName":"registrations/reset_password",
+          "Synopsis": "Starts the reset password process. When sent with a valid email address, it will send the email to the user to continue the reset process.",
+          "HTTPMethod":"POST",
+          "URI":"/users/reset_password.json",
+          "RequiresOAuth":"Y",
+          "parameters":[
+            {
+              "Name":"email",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The email address of the user"
+            }
+          ],
+          "ResponseCode":"201 (Created)"
+        }
+        {
           "MethodName":"registrations/pushtoken",
           "Synopsis": "Used to assign the current device's push token to the currently logged in user. If the push token already exists for the user, it is silently discarded.",
           "HTTPMethod":"POST",
