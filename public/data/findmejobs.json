@@ -451,6 +451,16 @@
               "Default":"",
               "Type":"string",
               "Description":"The email address of the user"
+            },
+            {
+              "Name":"client",
+              "Required":"N",
+              "Default":"",
+              "Type":"enumerated",
+              "Description":"Optional value to force a type of client. This will determine the type of link sent in the final email after the reset password is complete",
+              "EnumeratedList":[
+                "ios"
+              ]
             }
           ],
           "ResponseCode":"201 (Created)"
