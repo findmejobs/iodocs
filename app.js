@@ -680,9 +680,10 @@ app.dynamicHelpers({
 // Routes
 //
 app.get('/', function(req, res) {
-    res.render('listAPIs', {
-        title: config.title
-    });
+    // res.render('listAPIs', {
+    //     title: config.title
+    // });
+    res.redirect('/findmejobs');
 });
 
 // Process the API request
