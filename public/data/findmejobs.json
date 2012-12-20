@@ -90,14 +90,14 @@
               "Required":"N",
               "Default":"",
               "Type":"string",
-              "Description":"The comma seperated lat and long to search for listings near. This will not work with the location parameter."
+              "Description":"The comma seperated lat and long to search for listings near."
             },
             {
               "Name":"location",
               "Required":"N",
               "Default":"",
               "Type":"float",
-              "Description":"The location name to search for listings near. This will not work with the lat_long parameter."
+              "Description":"The location name to search for listings near. This will be ignored if the lat_long parameter is also passed."
             },
             {
               "Name":"distance",
