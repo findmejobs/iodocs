@@ -127,7 +127,7 @@
                     "closing_date":null,
                     "country":"GB",
                     "created_at":"2012-11-19T15:55:48Z",
-                    "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.", 
+                    "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.",
                     "distance":"3.78876892023058",
                     "id":279,
                     "location_lat":51.4309209,
@@ -164,7 +164,7 @@
                 "closing_date":null,
                 "country":"GB",
                 "created_at":"2012-11-19T15:55:48Z",
-                "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.", 
+                "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.",
                 "distance":"3.78876892023058",
                 "id":279,
                 "location_lat":51.4309209,
@@ -784,7 +784,7 @@
       "methods":[
         {
           "MethodName":"saved_listings/index",
-          "Synopsis": "Gets a list of saved listings",
+          "Synopsis": "Gets a list of saved listings for the currently logged in user",
           "HTTPMethod":"GET",
           "URI":"/saved_listings.json",
           "RequiresOAuth":"Y",
@@ -805,7 +805,7 @@
                     "closing_date":null,
                     "country":"GB",
                     "created_at":"2012-11-19T15:55:48Z",
-                    "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.", 
+                    "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.",
                     "distance":"3.78876892023058",
                     "id":279,
                     "location_lat":51.4309209,
@@ -825,18 +825,11 @@
         },
         {
           "MethodName":"saved_listings/create",
-          "Synopsis":"Creates a new saved listing",
+          "Synopsis":"Creates a new saved listing for the currently logged in user",
           "HTTPMethod":"POST",
           "URI":"/saved_listings.json",
           "RequiresOAuth":"Y",
           "parameters":[
-            {
-              "Name":"user_id",
-              "Required":"Y",
-              "Default":"",
-              "Type":"integer",
-              "Description":"The id of the user"
-            },
             {
               "Name":"listing_id",
               "Required":"Y",
@@ -849,18 +842,11 @@
         },
         {
           "MethodName":"saved_listings/update",
-          "Synopsis": "Updates an existing saved listing",
+          "Synopsis": "Updates an existing saved listing. This only works for the saved listings owned by the currently logged in user.",
           "HTTPMethod":"PUT",
           "URI":"/saved_listings/1.json",
           "RequiresOAuth":"Y",
           "parameters":[
-            {
-              "Name":"user_id",
-              "Required":"Y",
-              "Default":"",
-              "Type":"integer",
-              "Description":"The id of the user"
-            },
             {
               "Name":"listing_id",
               "Required":"Y",
@@ -873,7 +859,7 @@
         },
         {
           "MethodName":"saved_listings/delete",
-          "Synopsis": "Deletes an existing saved listing",
+          "Synopsis": "Deletes an existing saved listing. This only works for the saved listings owned by the currently logged in user.",
           "HTTPMethod":"DELETE",
           "URI":"/saved_listings/1.json",
           "RequiresOAuth":"Y",
