@@ -778,6 +778,109 @@
           "ResponseCode":"204 (No Content)"
         }
       ]
+    },
+    {
+      "name": "Saved Listing Methods",
+      "methods":[
+        {
+          "MethodName":"saved_listings/index",
+          "Synopsis": "Gets a list of saved listings",
+          "HTTPMethod":"GET",
+          "URI":"/saved_listings.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ResponseCode":"200 (Ok)",
+          "ExpectResponses":[
+            {
+              "Format": "json",
+              "Schema": [
+                {
+                  "created_at":"2012-10-07T12:14:43Z",
+                  "id":1,
+                  "user_id":1,
+                  "listing":{
+                    "active":true,
+                    "agency_id":4,
+                    "bearing":"4.785452896155",
+                    "closing_date":null,
+                    "country":"GB",
+                    "created_at":"2012-11-19T15:55:48Z",
+                    "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.", 
+                    "distance":"3.78876892023058",
+                    "id":279,
+                    "location_lat":51.4309209,
+                    "location_long":-0.0936496,
+                    "location_name":"Lambeth",
+                    "max_salary":null,
+                    "min_salary":null,
+                    "payment_frequency":null,
+                    "position_id":389,
+                    "title":"Recruiter",
+                    "updated_at":"2012-11-19T15:55:48Z"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "MethodName":"saved_listings/create",
+          "Synopsis":"Creates a new saved listing",
+          "HTTPMethod":"POST",
+          "URI":"/saved_listings.json",
+          "RequiresOAuth":"Y",
+          "parameters":[
+            {
+              "Name":"user_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the user"
+            },
+            {
+              "Name":"listing_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the listing"
+            }
+          ],
+          "ResponseCode":"201 (Created)"
+        },
+        {
+          "MethodName":"saved_listings/update",
+          "Synopsis": "Updates an existing saved listing",
+          "HTTPMethod":"PUT",
+          "URI":"/saved_listings/1.json",
+          "RequiresOAuth":"Y",
+          "parameters":[
+            {
+              "Name":"user_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the user"
+            },
+            {
+              "Name":"listing_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the listing"
+            }
+          ],
+          "ResponseCode":"204 (No Content)"
+        },
+        {
+          "MethodName":"saved_listings/delete",
+          "Synopsis": "Deletes an existing saved listing",
+          "HTTPMethod":"DELETE",
+          "URI":"/saved_listings/1.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ResponseCode":"204 (No Content)"
+        }
+      ]
     }
   ]
 }
