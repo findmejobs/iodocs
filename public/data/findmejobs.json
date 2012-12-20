@@ -795,6 +795,7 @@
               "Format": "json",
               "Schema": [
                 {
+                  "applied_to":false,
                   "created_at":"2012-10-07T12:14:43Z",
                   "id":1,
                   "user_id":1,
@@ -836,6 +837,13 @@
               "Default":"",
               "Type":"integer",
               "Description":"The id of the listing"
+            },
+            {
+              "Name":"applied_to",
+              "Required":"N",
+              "Default":"false",
+              "Type":"boolean",
+              "Description":"If the user has applied to this listing"
             }
           ],
           "ResponseCode":"201 (Created)"
@@ -853,6 +861,13 @@
               "Default":"",
               "Type":"integer",
               "Description":"The id of the listing"
+            },
+            {
+              "Name":"applied_to",
+              "Required":"N",
+              "Default":"false",
+              "Type":"boolean",
+              "Description":"If the user has applied to this listing"
             }
           ],
           "ResponseCode":"204 (No Content)"
