@@ -882,6 +882,142 @@
           "ResponseCode":"204 (No Content)"
         }
       ]
+    },
+    {
+      "name": "Notification Methods",
+      "methods":[
+        {
+          "MethodName":"notifications/index",
+          "Synopsis": "Gets a list of notifications for the currently logged in user",
+          "HTTPMethod":"GET",
+          "URI":"/notifications.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ResponseCode":"200 (Ok)",
+          "ExpectResponses":[
+            {
+              "Format": "json",
+              "Schema": [
+                {
+                  "created_at":"2012-10-07T12:14:43Z",
+                  "id":1,
+                  "target_type":"Listing",
+                  "target_id":279,
+                  "read":false,
+                  "read_at":"2012-10-07T12:14:43Z",
+                  "title":"This is a notification",
+                  "user_id":1,
+                  "target":{
+                    "active":true,
+                    "agency_id":4,
+                    "bearing":"4.785452896155",
+                    "closing_date":null,
+                    "country":"GB",
+                    "created_at":"2012-11-19T15:55:48Z",
+                    "description":"you will be effectively managing the recruitment of staff in a define Area of the country. Ensuring that there are sufficient numbers of care workers to support the delivery of care services throughout the country.",
+                    "distance":"3.78876892023058",
+                    "id":279,
+                    "location_lat":51.4309209,
+                    "location_long":-0.0936496,
+                    "location_name":"Lambeth",
+                    "max_salary":null,
+                    "min_salary":null,
+                    "payment_frequency":null,
+                    "position_id":389,
+                    "title":"Recruiter",
+                    "updated_at":"2012-11-19T15:55:48Z"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "MethodName":"notifications/create",
+          "Synopsis":"Creates a new notification for the currently logged in user",
+          "HTTPMethod":"POST",
+          "URI":"/notifications.json",
+          "RequiresOAuth":"Y",
+          "parameters":[
+            {
+              "Name":"target_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the target object"
+            },
+            {
+              "Name":"target_type",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The type of target object. Most likely 'Listing'."
+            },
+            {
+              "Name":"read",
+              "Required":"N",
+              "Default":"false",
+              "Type":"boolean",
+              "Description":"If the user has read this notification"
+            },
+            {
+              "Name":"title",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The title of the notification."
+            }
+          ],
+          "ResponseCode":"201 (Created)"
+        },
+        {
+          "MethodName":"notifications/update",
+          "Synopsis": "Updates an existing notification. This only works for the notifications owned by the currently logged in user.",
+          "HTTPMethod":"PUT",
+          "URI":"/notifications/1.json",
+          "RequiresOAuth":"Y",
+          "parameters":[
+            {
+              "Name":"target_id",
+              "Required":"Y",
+              "Default":"",
+              "Type":"integer",
+              "Description":"The id of the target object"
+            },
+            {
+              "Name":"target_type",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The type of target object. Most likely 'Listing'."
+            },
+            {
+              "Name":"read",
+              "Required":"N",
+              "Default":"false",
+              "Type":"boolean",
+              "Description":"If the user has read this notification"
+            },
+            {
+              "Name":"title",
+              "Required":"Y",
+              "Default":"",
+              "Type":"string",
+              "Description":"The title of the notification."
+            }
+          ],
+          "ResponseCode":"204 (No Content)"
+        },
+        {
+          "MethodName":"notifications/delete",
+          "Synopsis": "Deletes an existing notification. This only works for the notifications owned by the currently logged in user.",
+          "HTTPMethod":"DELETE",
+          "URI":"/notifications/1.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ResponseCode":"204 (No Content)"
+        }
+      ]
     }
   ]
 }
