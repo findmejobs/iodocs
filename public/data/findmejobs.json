@@ -892,7 +892,22 @@
           "HTTPMethod":"GET",
           "URI":"/notifications.json",
           "RequiresOAuth":"Y",
-          "parameters":[],
+          "parameters":[
+            {
+              "Name":"since",
+              "Required":"N",
+              "Default":"",
+              "Type":"datetime",
+              "Description":"A valid timestamp since the epoch. Only send the notifications that have been added since that time."
+            },
+            {
+              "Name":"only_unread",
+              "Required":"N",
+              "Default":"false",
+              "Type":"boolean",
+              "Description":"If true, only send the notifications that are unread."
+            }
+          ],
           "ResponseCode":"200 (Ok)",
           "ExpectResponses":[
             {
