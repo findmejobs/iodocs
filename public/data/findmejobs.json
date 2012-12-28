@@ -1031,6 +1031,24 @@
           "RequiresOAuth":"Y",
           "parameters":[],
           "ResponseCode":"204 (No Content)"
+        },
+        {
+          "MethodName":"notifications/read",
+          "Synopsis": "Marks a specific notification as read. This is a shortcut from using the update command to do it. It also sets the read_at timestamp correctly in the process. This only works for notifications owned by the currently logged in user.",
+          "HTTPMethod":"PUT",
+          "URI":"/notifications/1/read.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ResponseCode":"204 (No Content)"
+        },
+        {
+          "MethodName":"notifications/unread",
+          "Synopsis": "Marks a specific notification as unread. This is a shortcut from using the update command to do it. It also sets the read_at timestamp correctly in the process. This only works for notifications owned by the currently logged in user.",
+          "HTTPMethod":"DELETE",
+          "URI":"/notifications/1/read.json",
+          "RequiresOAuth":"Y",
+          "parameters":[],
+          "ResponseCode":"204 (No Content)"
         }
       ]
     }
